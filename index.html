@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Dra. Isadora Inácio Ribeiro, cirurgiã-dentista em Sarzedo, MG. Endodontia, estética e odontologia do esporte.">
+<link rel="icon" href="mono.png">
+<title>Dra. Isadora Inácio Ribeiro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@1,500&family=Marcellus&display=swap">
+<style>
+/* Layout: white clinic site. Pinned scroll-driven 3D tooth hero (intro zoom from blur), next section slides over it, clip-reveal portrait, hover-focus treatment grid, horizontal "needs" rail */
+:root{
+  --white:#FFFFFF; --snow:#FAF7F3; --sand:#F1E9E0; --line:#ECE3DA; --ink:#211518; --text:#5D4F50; --soft:#8D8081;
+  --marsala:#7E353F; --gold:#C9A465; --gold-dk:#9C7536; --gold-lt:#E6CF9C; --night:#231619;
+  --grad-gold:linear-gradient(135deg,#E2C68E 0%,#C9A465 45%,#A9824A 100%);
+  --grad-text:linear-gradient(120deg,#B88A45 0%,#9C6F35 55%,#7E353F 100%);
+  --sans:'Outfit',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;
+  --serif:'Cormorant Garamond','Times New Roman',serif;
+  --mark:'Marcellus','Times New Roman',serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{max-width:100%;display:block}
+h1,h2,h3{font-weight:500;letter-spacing:-.02em;line-height:1.08;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.gold-text{background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
+.it{font-family:var(--serif);font-style:italic;font-weight:500;letter-spacing:-.01em}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:11.5px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-dk)}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--sans);font-size:14px;font-weight:500;padding:15px 26px;border-radius:999px;border:0;cursor:pointer;transition:transform .25s,box-shadow .25s,background .25s,color .25s}
+.btn:focus-visible,a:focus-visible{outline:2px solid var(--marsala);outline-offset:3px}
+.btn-gold{background:var(--grad-gold);color:#2A1A12;box-shadow:0 10px 24px -12px rgba(169,130,74,.8)}
+.btn-gold:hover{transform:translateY(-2px)}
+.btn-line{background:rgba(255,255,255,.7);color:var(--ink);border:1px solid var(--line);backdrop-filter:blur(6px)}
+.btn-line:hover{border-color:var(--gold)}
+
+/* NAV */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--white)}
+header.nav{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);z-index:50;transition:background .35s,box-shadow .35s}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:76px}
+header.nav.solid{background:rgba(255,255,255,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:30px;height:auto}
+.brand b{font-family:var(--mark);font-weight:400;font-size:14px;letter-spacing:.22em;color:var(--marsala);white-space:nowrap}
+.links{display:flex;gap:32px;font-size:14px;font-weight:400;color:var(--text)}
+.links a:hover{color:var(--marsala)}
+.nav .btn{padding:11px 20px;font-size:13px;background:transparent;border:1px solid var(--gold);color:var(--gold-dk)}
+.nav .btn:hover{background:var(--grad-gold);color:#2A1A12;border-color:transparent}
+
+/* HERO (pinned) */
+#hero{position:relative;height:330vh}
+.pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;
+  background:radial-gradient(60% 70% at 66% 45%,#FFFDF9 0%,#F6EEE5 45%,#EADCCD 100%)}
+.glow{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none}
+.glow.a{width:38vw;height:38vw;right:6vw;top:6vh;background:radial-gradient(circle,rgba(255,214,160,.55),rgba(255,214,160,0) 70%)}
+.glow.b{width:24vw;height:30vw;left:42vw;top:18vh;background:radial-gradient(circle,rgba(201,164,101,.22),rgba(201,164,101,0) 70%)}
+#gl{position:absolute;inset:0;width:100%;height:100%;display:block;transition:filter .1s linear}
+.hero-copy{position:absolute;left:0;right:0;top:0;bottom:0;pointer-events:none}
+.hero-copy .wrap{position:relative;height:100%}
+.hc{position:absolute;left:max(20px,env(safe-area-inset-left,0px));top:50%;transform:translateY(-50%);max-width:560px;pointer-events:auto}
+.hc h1{font-size:clamp(46px,7vw,96px);font-weight:400;letter-spacing:-.035em;margin:22px 0 22px}
+.hc h1 .it{display:block;font-size:1.08em;line-height:1}
+.hc p{font-size:18px;color:var(--text);max-width:440px}
+.hc .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.line{display:block;overflow:hidden;padding-bottom:.06em}
+.line > span{display:block;transform:translateY(0);transition:transform 1.1s cubic-bezier(.2,.8,.2,1)}
+.intro .line > span{transform:translateY(105%)}
+.fade{transition:opacity 1s .6s,transform 1s .6s}
+.intro .fade{opacity:0;transform:translateY(16px)}
+.hc2{position:absolute;right:max(20px,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%);max-width:360px;opacity:0;pointer-events:none}
+.hc2 .stat{border-top:1px solid rgba(156,117,54,.35);padding:16px 0}
+.hc2 .stat b{display:block;font-family:var(--serif);font-style:italic;font-weight:500;font-size:30px;color:var(--marsala);line-height:1.1}
+.hc2 .stat span{font-size:14px;color:var(--text)}
+.scrollcue{position:absolute;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 26px);transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--soft)}
+.scrollcue i{width:1px;height:42px;background:linear-gradient(var(--gold),transparent);animation:cue 1.8s ease-in-out infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.badge3d{position:absolute;right:max(20px,env(safe-area-inset-right,0px));bottom:calc(env(safe-area-inset-bottom,0px) + 26px);font-size:12px;color:var(--soft);display:flex;align-items:center;gap:8px}
+.badge3d::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(201,164,101,.2)}
+
+/* SLIDE-OVER */
+.over{position:relative;z-index:5;margin-top:-100vh;background:var(--white);border-radius:36px 36px 0 0;box-shadow:0 -30px 60px -40px rgba(60,30,20,.35)}
+section.s{padding-block:110px}
+
+/* ABOUT with clip reveal */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.reveal-img{position:relative;aspect-ratio:4/5;border-radius:28px;overflow:hidden;background:linear-gradient(170deg,#EFE4DA,#E0CFC1);clip-path:inset(var(--ci,0%) var(--ci,0%) var(--ci,0%) var(--ci,0%) round 28px)}
+.reveal-img img.photo{position:absolute;left:50%;top:44%;width:96%;transform:translate(-50%,-50%) scale(var(--sc,1));-webkit-mask:radial-gradient(circle closest-side,#000 96.5%,transparent 97.5%);mask:radial-gradient(circle closest-side,#000 96.5%,transparent 97.5%)}
+.reveal-img .cap{position:absolute;left:24px;right:24px;bottom:22px;display:flex;justify-content:space-between;align-items:flex-end;color:var(--marsala);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase}
+.reveal-img .cap img{width:40px}
+.about h2{font-size:clamp(36px,4.6vw,60px);font-weight:400;margin:20px 0 24px}
+.about p.body{color:var(--text);font-size:17.5px;max-width:520px}
+.quote{font-family:var(--serif);font-style:italic;font-weight:500;font-size:30px;line-height:1.25;color:var(--marsala);margin-top:30px;padding-left:20px;border-left:1px solid var(--gold)}
+.pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.pills span{font-size:13px;border:1px solid var(--line);padding:8px 14px;border-radius:999px;color:var(--text)}
+
+/* TREATMENT GRID with hover focus */
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:46px}
+.sec-head h2{font-size:clamp(34px,4.4vw,56px);font-weight:400;margin-top:18px}
+.sec-head p{max-width:400px;color:var(--text)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tile{position:relative;border-radius:24px;padding:30px 28px 28px;min-height:280px;display:flex;flex-direction:column;justify-content:space-between;background:var(--snow);border:1px solid var(--line);overflow:hidden;transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .35s,box-shadow .45s,background .45s;cursor:pointer;outline:none}
+.tile .num{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--gold-dk)}
+.tile svg{position:absolute;right:22px;top:22px;width:64px;height:64px;transition:transform .5s}
+.tile h3{font-size:25px;font-weight:500}
+.tile p{font-size:15px;color:var(--text);margin-top:8px;max-height:0;opacity:0;overflow:hidden;transition:max-height .45s,opacity .35s}
+.tile .go{margin-top:14px;font-size:13px;font-weight:500;color:var(--marsala);display:flex;gap:8px;align-items:center}
+.grid:hover .tile:not(:hover),.grid:focus-within .tile:not(:focus){opacity:.5}
+.tile:hover,.tile:focus{transform:translateY(-6px) scale(1.02);background:var(--white);box-shadow:0 30px 60px -36px rgba(80,40,30,.45);border-color:#E3D2BF}
+.tile:hover p,.tile:focus p{max-height:120px;opacity:1}
+.tile:hover svg,.tile:focus svg{transform:rotate(-8deg) scale(1.08)}
+.tile.dark{background:var(--night);border-color:var(--night);color:#F2E9E2}
+.tile.dark p{color:#D9CCC6}.tile.dark .go{color:var(--gold-lt)}.tile.dark .num{color:var(--gold-lt)}
+.tile.dark:hover,.tile.dark:focus{background:#2C1C20}
+@media (hover:none){.tile p{max-height:none;opacity:1}}
+
+/* NEEDS RAIL */
+.rail-wrap{background:var(--snow);border-block:1px solid var(--line)}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(280px,340px);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px max(20px,env(safe-area-inset-right,0px)) 26px max(20px,calc((100vw - 1200px)/2 + 20px));scrollbar-width:thin;cursor:grab}
+.rail::-webkit-scrollbar{height:6px}.rail::-webkit-scrollbar-thumb{background:#DCCDBE;border-radius:3px}
+.need{scroll-snap-align:start;background:var(--white);border:1px solid var(--line);border-radius:24px;padding:26px;display:flex;flex-direction:column;gap:12px;min-height:300px;transition:transform .35s,box-shadow .35s}
+.need:hover{transform:translateY(-4px);box-shadow:0 24px 50px -36px rgba(80,40,30,.5)}
+.need .q{font-family:var(--serif);font-style:italic;font-size:28px;line-height:1.1;color:var(--marsala)}
+.need p{color:var(--text);font-size:15px;flex:1}
+.need .tag{align-self:flex-start;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-dk);background:#F7EFE3;padding:6px 12px;border-radius:999px}
+.need a{font-size:13.5px;font-weight:500;color:var(--ink);border-top:1px solid var(--line);padding-top:14px;display:flex;justify-content:space-between}
+.rail-nav{display:flex;gap:10px}
+.rail-nav button{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--white);cursor:pointer;font-size:18px;color:var(--ink)}
+.rail-nav button:hover{border-color:var(--gold)}
+
+/* STEPS + CONTACT */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.step{border-top:1px solid var(--line);padding-top:24px}
+.step b{font-family:var(--serif);font-style:italic;font-weight:500;font-size:44px;color:var(--gold);line-height:1}
+.step h3{font-size:22px;margin:12px 0 8px}
+.step p{color:var(--text);font-size:15.5px}
+.contact{display:grid;grid-template-columns:1.05fr .95fr;gap:0;border-radius:32px;overflow:hidden;border:1px solid var(--line)}
+.contact .cb{padding:56px;background:var(--white)}
+.contact h2{font-size:clamp(34px,4vw,52px);font-weight:400;margin:18px 0 16px}
+.info{display:grid;gap:0;margin:26px 0 30px;border-top:1px solid var(--line)}
+.info div{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15.5px;align-items:baseline}
+.info small{flex:none;width:96px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-dk)}
+.info em{font-style:normal;color:var(--soft);font-size:13px}
+.contact .side{position:relative;background:radial-gradient(70% 70% at 50% 40%,#FFFDF9,#EFE4D8);min-height:360px;display:flex;align-items:center;justify-content:center}
+.contact .side .ring{width:220px;height:220px;border-radius:50%;border:1px solid rgba(201,164,101,.55);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 18px rgba(201,164,101,.07),0 0 0 36px rgba(201,164,101,.045)}
+footer{padding-block:44px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--soft)}
+.wa{position:fixed;right:calc(env(safe-area-inset-right,0px) + 20px);bottom:calc(env(safe-area-inset-bottom,0px) + 20px);width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 26px -10px rgba(0,0,0,.4);z-index:40}
+.mv{transform:translateY(var(--ty,0px));transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+
+
+/* PRACTICE full-bleed reveal */
+.practice{position:relative;height:88vh;min-height:520px;max-height:860px;margin:0 auto;overflow:hidden;clip-path:inset(0 var(--pi,0%) 0 var(--pi,0%) round var(--pr,0px))}
+.practice img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;transform:scale(var(--ps,1))}
+.practice::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(25,12,14,.78) 0%,rgba(25,12,14,.35) 45%,rgba(25,12,14,0) 70%)}
+.practice .pc{position:absolute;z-index:2;left:0;right:0;bottom:0;top:0;display:flex;align-items:center}
+.practice h2{color:#FBF4EC;font-size:clamp(36px,5vw,68px);font-weight:400;max-width:560px;margin:18px 0 18px}
+.practice p{color:rgba(251,244,236,.82);max-width:420px;font-size:17px}
+.practice .eyebrow{color:var(--gold-lt)}
+/* BEFORE/AFTER compare */
+.cases{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.case{border:1px solid var(--line);border-radius:26px;overflow:hidden;background:var(--white)}
+.cmp{position:relative;aspect-ratio:843/455;overflow:hidden;cursor:ew-resize;touch-action:pan-y;user-select:none;--x:50%}
+.cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.cmp .after{clip-path:inset(0 0 0 var(--x))}
+.cmp .bar{position:absolute;top:0;bottom:0;left:var(--x);width:2px;background:#fff;transform:translateX(-1px);box-shadow:0 0 12px rgba(0,0,0,.25)}
+.cmp .knob{position:absolute;top:50%;left:var(--x);width:46px;height:46px;border-radius:50%;background:#fff;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--ink);box-shadow:0 8px 20px -6px rgba(0,0,0,.4)}
+.cmp .lb{position:absolute;top:14px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;background:rgba(255,255,255,.88);padding:6px 10px;border-radius:999px;color:var(--ink)}
+.cmp .lb.l{left:14px}.cmp .lb.r{right:14px}
+.cmp input{position:absolute;inset:0;opacity:0;width:100%;height:100%;cursor:ew-resize;margin:0}
+.case .cbx{padding:22px 24px 24px;display:flex;justify-content:space-between;gap:16px;align-items:flex-end}
+.case h3{font-size:22px}.case p{color:var(--text);font-size:14.5px;margin-top:4px}
+.case .it{font-size:22px;color:var(--marsala);white-space:nowrap}
+.note{font-size:12.5px;color:var(--soft);margin-top:18px}
+@media (max-width:900px){.cases{grid-template-columns:1fr}.practice{height:72vh}}
+
+@media (max-width:900px){
+  .links{display:none}
+  .about,.contact{grid-template-columns:1fr}
+  .about{gap:40px}
+  .grid,.steps{grid-template-columns:1fr}
+  .tile{min-height:0}
+  .tile p{max-height:none;opacity:1}
+  .contact .cb{padding:36px 24px}
+  section.s{padding-block:76px}
+  .hc{top:auto;bottom:calc(env(safe-area-inset-bottom,0px) + 90px);transform:none;right:max(20px,env(safe-area-inset-right,0px))}
+  .hc h1{font-size:clamp(40px,11vw,60px);margin:14px 0 14px}
+  .hc p{font-size:16px}
+  .hc .ctas{margin-top:22px}
+  .hc2{display:none}
+  .hero-copy::before{content:"";position:absolute;left:0;right:0;bottom:0;height:62%;background:linear-gradient(rgba(246,238,229,0),rgba(246,238,229,.92) 38%,#F4ECE2)}
+  .scrollcue{display:none}
+  .badge3d{left:max(20px,env(safe-area-inset-left,0px));right:auto;bottom:calc(env(safe-area-inset-bottom,0px) + 40px)}
+  .glow.a{width:80vw;height:80vw;right:-10vw;top:4vh}
+}
+@media (max-width:520px){ .nav .btn{padding:9px 14px;font-size:12.5px} .brand b{font-size:12px;letter-spacing:.16em} }
+@media (prefers-reduced-motion:reduce){ .line > span,.fade,.mv,.tile,.need{transition:none!important} .intro .line > span{transform:none}.intro .fade{opacity:1;transform:none} .scrollcue i{animation:none} }
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav"><div class="wrap">
+ <a class="brand" href="#hero"><img src="mono.png" alt=""><b>DRA. ISADORA</b></a>
+ <nav class="links" aria-label="Principal"><a href="#sobre">Sobre</a><a href="#tratamentos">Tratamentos</a><a href="#resultados">Resultados</a><a href="#para-voce">Para você</a><a href="#contato">Contato</a></nav>
+ <a class="btn" href="#contato">Agendar consulta</a>
+</div></header>
+
+<main>
+<!-- HERO -->
+<section id="hero" class="intro">
+ <div class="pin">
+  <div class="glow a"></div><div class="glow b"></div>
+  <canvas id="gl" aria-label="Dente desenhado em fio de ouro girando em 3D"></canvas>
+  <div class="hero-copy"><div class="wrap">
+   <div class="hc" id="hc">
+    <span class="eyebrow fade">Cirurgiã-dentista · Sarzedo • MG</span>
+    <h1><span class="line"><span>Odontologia,</span></span><span class="line"><span class="it gold-text">de todo o coração.</span></span></h1>
+    <p class="fade">Endodontia, estética e odontologia do esporte com atendimento próximo, sem pressa e com técnica atualizada.</p>
+    <div class="ctas fade"><a class="btn btn-gold" href="#contato">Agendar avaliação</a><a class="btn btn-line" href="#tratamentos">Ver tratamentos</a></div>
+   </div>
+   <div class="hc2" id="hc2">
+    <div class="stat"><b>Endodontia</b><span>Pós-graduanda pela São Leopoldo Mandic</span></div>
+    <div class="stat"><b>Odontologia do esporte</b><span>Protetor bucal sob medida para atletas</span></div>
+    <div class="stat"><b>CRO-MG 80.424</b><span>Atendimento humanizado e personalizado</span></div>
+   </div>
+  </div></div>
+  <div class="scrollcue fade"><i></i>Role</div>
+  <div class="badge3d fade">Dente em 3D · role a página</div>
+ </div>
+</section>
+
+<div class="over">
+<!-- SOBRE -->
+<section class="s" id="sobre"><div class="wrap about">
+ <div class="reveal-img" id="rimg"><img class="photo" src="dra.jpg" alt="Dra. Isadora Inácio Ribeiro"><div class="cap"><span>Dra. Isadora<br>CRO-MG 80.424</span><img src="mono.png" alt=""></div></div>
+ <div class="mv" data-mv>
+  <span class="eyebrow">Sobre mim</span>
+  <h2>Prazer, eu sou a <span class="it gold-text">Dra. Isadora.</span></h2>
+  <p class="body">Sou cirurgiã-dentista, pós-graduanda em Endodontia pela São Leopoldo Mandic e apaixonada por Odontologia do Esporte. Acredito que a odontologia cuida, salva e transforma, e que cada paciente merece ser ouvido com atenção.</p>
+  <p class="quote">“Tudo que fizeres, faça de todo o coração.”</p>
+  <div class="pills"><span>Endodontia</span><span>Clareamento</span><span>Odontologia do Esporte</span><span>Imersões e congressos</span></div>
+ </div>
+</div></section>
+
+
+<!-- NA PRATICA -->
+<section class="practice" id="pratica" aria-label="Dra. Isadora em atendimento"><img src="pratica.jpg" alt="Dra. Isadora realizando um atendimento odontológico">
+ <div class="pc"><div class="wrap" style="width:100%"><span class="eyebrow">Na prática</span><h2>Técnica, cuidado e <span class="it" style="color:var(--gold-lt)">atenção a cada detalhe.</span></h2><p>Cada procedimento é feito com calma, biossegurança e explicação clara do que está acontecendo.</p></div></div>
+</section>
+
+<!-- TRATAMENTOS -->
+<section class="s" id="tratamentos"><div class="wrap">
+ <div class="sec-head"><div><span class="eyebrow">Tratamentos</span><h2>Cuidado completo, <span class="it gold-text">do jeito certo.</span></h2></div><p>Passe o mouse ou toque em cada tratamento para ver os detalhes. Todo atendimento começa com uma avaliação sem pressa.</p></div>
+ <div class="grid">
+  <a class="tile dark" tabindex="0" href="#contato"><span class="num">Especialidade</span><svg viewBox="0 0 64 64" fill="none" stroke="#E6CF9C" stroke-width="1.2"><path d="M20 10c-6 0-9 5-9 11 0 7 3.5 11 5 19 1.3 7.5 2.6 14 5.8 14 4 0 3.4-12 10.2-12s6.2 12 10.2 12c3.2 0 4.5-6.5 5.8-14 1.5-8 5-12 5-19 0-6-3-11-9-11-4.8 0-7 2.6-12 2.6S24.8 10 20 10z"/><path d="M32 26v16" stroke-dasharray="2 3"/></svg><div><h3>Endodontia</h3><p>Tratamento de canal com foco no conforto e em preservar o seu dente natural. Cada etapa explicada antes de acontecer.</p><span class="go">Falar sobre canal →</span></div></a>
+  <a class="tile" tabindex="0" href="#contato"><span class="num">Estética</span><svg viewBox="0 0 64 64" fill="none" stroke="#9C7536" stroke-width="1.2"><path d="M32 8l4.8 13.6L50 26l-13.2 4.4L32 44l-4.8-13.6L14 26l13.2-4.4z"/><path d="M48 40l1.8 4.8L54 46.6l-4.2 1.8L48 53l-1.8-4.6L42 46.6l4.2-1.8z"/></svg><div><h3>Clareamento dental</h3><p>Em consultório, para um sorriso mais claro e natural, com avaliação prévia e orientação para manter a cor.</p><span class="go">Falar sobre clareamento →</span></div></a>
+  <a class="tile" tabindex="0" href="#contato"><span class="num">Estética</span><svg viewBox="0 0 64 64" fill="none" stroke="#9C7536" stroke-width="1.2"><path d="M20 10c-6 0-9 5-9 11 0 7 3.5 11 5 19 1.3 7.5 2.6 14 5.8 14 4 0 3.4-12 10.2-12s6.2 12 10.2 12c3.2 0 4.5-6.5 5.8-14 1.5-8 5-12 5-19 0-6-3-11-9-11-4.8 0-7 2.6-12 2.6S24.8 10 20 10z"/><path d="M38 14c4 1 6 4 6 8"/></svg><div><h3>Restaurações estéticas</h3><p>Resinas que devolvem forma, função e cor, imitando o esmalte natural do dente.</p><span class="go">Falar sobre restauração →</span></div></a>
+  <a class="tile" tabindex="0" href="#contato"><span class="num">Esporte</span><svg viewBox="0 0 64 64" fill="none" stroke="#9C7536" stroke-width="1.2"><circle cx="36" cy="12" r="4.5"/><path d="M20 56l8-16 8 5v11M26 32l5-10 10 8 8-3M28 40l-10-2.5-5 8"/></svg><div><h3>Odontologia do esporte</h3><p>Protetor bucal personalizado, avaliação para atletas e prevenção de traumas.</p><span class="go">Falar sobre esporte →</span></div></a>
+  <a class="tile" tabindex="0" href="#contato"><span class="num">Rotina</span><svg viewBox="0 0 64 64" fill="none" stroke="#9C7536" stroke-width="1.2"><path d="M32 8c8 9.5 16 18 16 27a16 16 0 0 1-32 0c0-9 8-17.5 16-27z"/><path d="M24 38a8 8 0 0 0 8 8"/></svg><div><h3>Prevenção e limpeza</h3><p>Profilaxia, orientação de higiene e consultas de rotina para manter tudo em dia.</p><span class="go">Agendar limpeza →</span></div></a>
+  <a class="tile" tabindex="0" href="#contato"><span class="num">Primeiro passo</span><svg viewBox="0 0 64 64" fill="none" stroke="#9C7536" stroke-width="1.2"><rect x="10" y="14" width="44" height="40" rx="6"/><path d="M10 26h44M22 8v10M42 8v10M24 38l6 6 12-12"/></svg><div><h3>Avaliação completa</h3><p>Uma conversa sem pressa, exame clínico e um plano de tratamento explicado para você.</p><span class="go">Agendar avaliação →</span></div></a>
+ </div>
+</div></section>
+
+
+<!-- RESULTADOS -->
+<section class="s" id="resultados" style="padding-top:0"><div class="wrap">
+ <div class="sec-head"><div><span class="eyebrow">Resultados</span><h2>E assim tudo muda, <span class="it gold-text">mesmo sem mudar.</span></h2></div><p>Arraste a linha para comparar o antes e o depois de casos atendidos pela Dra. Isadora.</p></div>
+ <div class="cases">
+  <article class="case"><div class="cmp"><img src="clar_antes.jpg" alt="Antes do clareamento"><img class="after" src="clar_depois.jpg" alt="Depois do clareamento"><span class="bar"></span><span class="knob">⟷</span><span class="lb l">Antes</span><span class="lb r">Depois</span><input type="range" min="0" max="100" value="50" id="cmp1" aria-label="Comparar antes e depois do clareamento"></div>
+   <div class="cbx"><div><h3>Clareamento dental</h3><p>Em consultório, em uma sessão.</p></div><span class="it">mais luz ✦</span></div></article>
+  <article class="case"><div class="cmp"><img src="rest_antes.jpg" alt="Antes da restauração"><img class="after" src="rest_depois.jpg" alt="Depois da restauração"><span class="bar"></span><span class="knob">⟷</span><span class="lb l">Antes</span><span class="lb r">Depois</span><input type="range" min="0" max="100" value="50" id="cmp2" aria-label="Comparar antes e depois da restauração"></div>
+   <div class="cbx"><div><h3>Restauração estética</h3><p>Devolvendo forma ao sorriso.</p></div><span class="it">tudo muda ✦</span></div></article>
+ </div>
+ <p class="note">Resultados variam de pessoa para pessoa e dependem de avaliação clínica.</p>
+</div></section>
+
+<!-- PARA VOCE rail -->
+<section class="s rail-wrap" id="para-voce" style="padding-block:90px 70px">
+ <div class="wrap sec-head" style="margin-bottom:30px"><div><span class="eyebrow">Para você</span><h2>Cada sorriso, <span class="it gold-text">uma necessidade.</span></h2></div><div class="rail-nav"><button type="button" id="prev" aria-label="Anterior">←</button><button type="button" id="next" aria-label="Próximo">→</button></div></div>
+ <div class="rail" id="rail">
+  <article class="need"><span class="tag">Endodontia</span><div class="q">Estou com dor de dente.</div><p>Dor forte, sensibilidade ao quente ou inchaço podem indicar problema no nervo. Avaliar cedo aumenta a chance de salvar o dente.</p><a href="#contato">Quero ser avaliado <span>→</span></a></article>
+  <article class="need"><span class="tag">Clareamento</span><div class="q">Quero um sorriso mais claro.</div><p>Clareamento em consultório com acompanhamento profissional e resultado natural.</p><a href="#contato">Falar sobre clareamento <span>→</span></a></article>
+  <article class="need"><span class="tag">Esporte</span><div class="q">Sou atleta.</div><p>Protetor bucal sob medida e cuidado com a saúde bucal para treinar e competir com segurança.</p><a href="#contato">Falar sobre esporte <span>→</span></a></article>
+  <article class="need"><span class="tag">Restauração</span><div class="q">Quebrei um pedaço do dente.</div><p>Restaurações em resina devolvem forma e cor, imitando o esmalte natural.</p><a href="#contato">Agendar avaliação <span>→</span></a></article>
+  <article class="need"><span class="tag">Prevenção</span><div class="q">Faz tempo que não vou ao dentista.</div><p>Uma consulta de rotina com limpeza e orientação para recomeçar com tranquilidade.</p><a href="#contato">Agendar check-up <span>→</span></a></article>
+ </div>
+</section>
+
+<!-- STEPS -->
+<section class="s"><div class="wrap">
+ <div class="sec-head"><div><span class="eyebrow">Como funciona</span><h2>Do primeiro contato <span class="it gold-text">ao sorriso cuidado.</span></h2></div></div>
+ <div class="steps">
+  <div class="step mv" data-mv><b>1</b><h3>Chame no WhatsApp</h3><p>Conte o que está sentindo e escolha o melhor horário para você.</p></div>
+  <div class="step mv" data-mv><b>2</b><h3>Avaliação sem pressa</h3><p>Exame completo, conversa e explicação de cada opção de tratamento.</p></div>
+  <div class="step mv" data-mv><b>3</b><h3>Tratamento e retorno</h3><p>Plano personalizado, acompanhamento e orientações para manter o resultado.</p></div>
+ </div>
+</div></section>
+
+<!-- CONTATO -->
+<section class="s" id="contato" style="padding-top:0"><div class="wrap">
+ <div class="contact">
+  <div class="cb"><span class="eyebrow">Agende sua avaliação</span>
+   <h2>Vamos cuidar do <span class="it gold-text">seu sorriso?</span></h2>
+   <p style="color:var(--text)">Atendimento presencial em Sarzedo, MG.</p>
+   <div class="info">
+    <div><small>Endereço</small><span>Sarzedo • MG <em>(a confirmar)</em></span></div>
+    <div><small>Horários</small><span>Segunda a sexta <em>(a confirmar)</em></span></div>
+    <div><small>WhatsApp</small><span>(31) 9 ____-____ <em>(a confirmar)</em></span></div>
+    <div><small>Instagram</small><span>@dra.isadorainacioribeiro</span></div>
+   </div>
+   <a class="btn btn-gold" href="https://www.instagram.com/dra.isadorainacioribeiro/" target="_blank" rel="noopener">Falar pelo Instagram</a>
+  </div>
+  <div class="side"><div class="ring"><img src="mono.png" alt="" style="width:86px"></div></div>
+ </div>
+</div></section>
+
+<footer><div class="wrap"><img src="logo_full.png" alt="Dra. Isadora Inácio Ribeiro, cirurgiã-dentista" style="width:200px"><span>Cirurgiã-dentista · CRO-MG 80.424 · Sarzedo • MG · Protótipo</span></div></footer>
+</div>
+</main>
+<a class="wa" href="#contato" aria-label="Agendar pelo WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.6-.1 1.1z"/></svg></a>
+
+<script>
+/* page mechanics (no 3D) */
+(function(){
+ const nav=document.getElementById('nav'),hero=document.getElementById('hero'),hc=document.getElementById('hc'),hc2=document.getElementById('hc2'),rimg=document.getElementById('rimg');
+ const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ window.__heroP=0;
+ function onScroll(){
+  const r=hero.getBoundingClientRect();const span=r.height-innerHeight;
+  const p=Math.min(1,Math.max(0,-r.top/span));window.__heroP=p;
+  nav.classList.toggle('solid',r.bottom<innerHeight*1.02);
+  // copy 1 drifts up and fades between p .12 and .38 ; copy 2 fades in .36-.5 out .78-.9
+  const a=Math.min(1,Math.max(0,(p-.12)/.26));
+  hc.style.opacity=String(1-a);hc.style.transform=(innerWidth>900?'translateY(calc(-50% - ':'translateY(calc(0% - ')+(a*60)+'px))';
+  hc.style.pointerEvents=a>.6?'none':'auto';
+  const b=Math.min(1,Math.max(0,(p-.36)/.14))*(1-Math.min(1,Math.max(0,(p-.8)/.12)));
+  hc2.style.opacity=String(b);hc2.style.transform='translateY(calc(-50% + '+((1-b)*30)+'px))';
+  // portrait clip reveal tied to its own scroll position
+  const ir=rimg.getBoundingClientRect();const q=Math.min(1,Math.max(0,(innerHeight-ir.top)/(innerHeight*.8)));
+  rimg.style.setProperty('--ci',reduce?'0%':((1-q)*14).toFixed(2)+'%');rimg.style.setProperty('--sc',reduce?1:(1.12-q*.12).toFixed(3));
+  const pr=document.getElementById('pratica');const prr=pr.getBoundingClientRect();const pq=Math.min(1,Math.max(0,(innerHeight-prr.top)/(innerHeight*.9)));
+  pr.style.setProperty('--pi',reduce?'0%':((1-pq)*8).toFixed(2)+'%');pr.style.setProperty('--pr',reduce?'0px':((1-pq)*40).toFixed(1)+'px');pr.style.setProperty('--ps',reduce?1:(1.15-pq*.15).toFixed(3));
+  document.querySelectorAll('[data-mv]').forEach(el=>{const t=el.getBoundingClientRect().top;const k=Math.min(1,Math.max(0,(innerHeight-t)/(innerHeight*.5)));el.style.setProperty('--ty',reduce?'0px':((1-k)*40).toFixed(1)+'px');});
+ }
+ addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);onScroll();
+ document.querySelectorAll('.cmp').forEach(c=>{const i=c.querySelector('input');const u=()=>c.style.setProperty('--x',i.value+'%');i.addEventListener('input',u);u();});
+ // rail controls + drag
+ const rail=document.getElementById('rail');
+ document.getElementById('prev').onclick=()=>rail.scrollBy({left:-360,behavior:'smooth'});
+ document.getElementById('next').onclick=()=>rail.scrollBy({left:360,behavior:'smooth'});
+ let dn=false,sx=0,sl=0;rail.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return;dn=true;sx=e.clientX;sl=rail.scrollLeft;rail.style.scrollSnapType='none';});
+ addEventListener('pointerup',()=>{if(dn){dn=false;rail.style.scrollSnapType='';}});
+ rail.addEventListener('pointermove',e=>{if(dn)rail.scrollLeft=sl-(e.clientX-sx);});
+ // intro: release text after a beat (fallback even if 3D fails)
+ setTimeout(()=>hero.classList.remove('intro'),reduce?0:900);
+})();
+</script>
+
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
+<script type="module">
+const canvas=document.getElementById('gl');
+try{
+const THREE=await import('three');
+const {RoomEnvironment}=await import('three/addons/environments/RoomEnvironment.js');
+const r=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:'high-performance'});
+r.setPixelRatio(Math.min(devicePixelRatio,2));r.toneMapping=THREE.ACESFilmicToneMapping;r.toneMappingExposure=1.0;r.outputColorSpace=THREE.SRGBColorSpace;
+
+const scene=new THREE.Scene();const pm=new THREE.PMREMGenerator(r);
+scene.environment=pm.fromScene(new RoomEnvironment(),0.04).texture;scene.environmentIntensity=1.0;
+const cam=new THREE.PerspectiveCamera(28,1,0.05,100);
+const key=new THREE.DirectionalLight(0xfff0dc,2.4);key.position.set(2.5,5,5);scene.add(key);
+const rim=new THREE.DirectionalLight(0xffb871,3.2);rim.position.set(-4.5,3,-4);scene.add(rim);
+const rim2=new THREE.DirectionalLight(0xffd9a8,1.4);rim2.position.set(4.5,1.5,-3.5);scene.add(rim2);
+const fill=new THREE.HemisphereLight(0xfff6ee,0xd8c3ad,0.55);scene.add(fill);
+
+// ---- gold wire tooth ----
+const S=[[-0.30,-1.52],[-0.40,-1.05],[-0.50,-0.45],[-0.56,0.02],[-0.70,0.40],[-0.78,0.78],[-0.66,1.10],[-0.46,1.24],[-0.26,1.16],[-0.06,1.06],[0.12,1.15],[0.36,1.26],[0.60,1.14],[0.76,0.82],[0.70,0.40],[0.56,0.02],[0.50,-0.45],[0.44,-1.05],[0.36,-1.50],[0.24,-1.52],[0.16,-1.02],[0.08,-0.58],[0.0,-0.42],[-0.08,-0.58],[-0.16,-1.02],[-0.22,-1.54]];
+const gold=new THREE.MeshPhysicalMaterial({color:0xD9B46A,metalness:1,roughness:.2,clearcoat:.4,clearcoatRoughness:.15,envMapIntensity:1.25});
+const goldSoft=new THREE.MeshPhysicalMaterial({color:0xE2C68E,metalness:1,roughness:.32,envMapIntensity:1.1,transparent:true,opacity:.75});
+const pivot=new THREE.Group();scene.add(pivot);
+function outline(angle,depth,radius,mat){
+ const pts=S.map(([x,y])=>{const zx=x*Math.cos(angle),zz=x*Math.sin(angle)*depth;return new THREE.Vector3(zx,y,zz);});
+ const curve=new THREE.CatmullRomCurve3(pts,true,'centripetal',0.5);
+ const m=new THREE.Mesh(new THREE.TubeGeometry(curve,700,radius,14,true),mat);pivot.add(m);return curve;}
+outline(0,1,0.022,gold);
+outline(Math.PI/2,0.86,0.009,goldSoft);
+// cervical ring + crown equator, as thin ellipses
+function ring(y,rx,rz,radius,mat,tilt=0){const pts=[];for(let i=0;i<64;i++){const a=i/64*Math.PI*2;pts.push(new THREE.Vector3(Math.cos(a)*rx,y+Math.sin(a)*tilt,Math.sin(a)*rz));}
+ pivot.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts,true),256,radius,10,true),mat));}
+ring(0.03,0.57,0.49,0.007,goldSoft,0.04);
+// small gold beads at cusp tips
+[[-0.46,1.24,0],[0.36,1.26,0]].forEach(([x,y,z])=>{const s=new THREE.Mesh(new THREE.SphereGeometry(0.035,24,16),gold);s.position.set(x,y,z);pivot.add(s);});
+// sparkles drifting around
+const NSP=70,spPos=new Float32Array(NSP*3),spSeed=[];
+for(let i=0;i<NSP;i++){const a=Math.random()*Math.PI*2,r=1.0+Math.random()*1.3,y=-1.6+Math.random()*3.2;spSeed.push([a,r,y,0.2+Math.random()*0.6]);}
+const spGeo=new THREE.BufferGeometry();spGeo.setAttribute('position',new THREE.BufferAttribute(spPos,3));
+const spTex=(()=>{const c=document.createElement('canvas');c.width=c.height=64;const g=c.getContext('2d');const rg=g.createRadialGradient(32,32,0,32,32,32);rg.addColorStop(0,'rgba(255,236,190,1)');rg.addColorStop(.25,'rgba(230,200,140,.8)');rg.addColorStop(1,'rgba(230,200,140,0)');g.fillStyle=rg;g.fillRect(0,0,64,64);return new THREE.CanvasTexture(c);})();
+const sparks=new THREE.Points(spGeo,new THREE.PointsMaterial({size:0.07,map:spTex,transparent:true,depthWrite:false,color:0xE9CF95}));scene.add(sparks);
+// soft contact shadow
+{const c=document.createElement('canvas');c.width=c.height=256;const g=c.getContext('2d');const rg=g.createRadialGradient(128,128,0,128,128,128);rg.addColorStop(0,'rgba(150,110,60,.28)');rg.addColorStop(1,'rgba(150,110,60,0)');g.fillStyle=rg;g.fillRect(0,0,256,256);
+ const sh=new THREE.Mesh(new THREE.PlaneGeometry(2.2,2.2),new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(c),transparent:true,depthWrite:false}));sh.rotation.x=-Math.PI/2;sh.position.y=-1.95;scene.add(sh);}
+function updSparks(t){for(let i=0;i<NSP;i++){const [a,r,y,s]=spSeed[i];const aa=a+t*0.00008*s*3;spPos[i*3]=Math.cos(aa)*r;spPos[i*3+1]=y+Math.sin(t*0.0006*s+a)*0.12;spPos[i*3+2]=Math.sin(aa)*r;}spGeo.attributes.position.needsUpdate=true;}
+
+
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let W=1,H=1,mobile=false;
+function size(){W=canvas.clientWidth;H=canvas.clientHeight;mobile=W<900;r.setSize(W,H,false);cam.aspect=W/H;cam.updateProjectionMatrix();}
+size();addEventListener('resize',size);
+const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+const lerp=(a,b,t)=>a+(b-a)*t;
+let t0=performance.now(),mx=0,my=0,smx=0,smy=0,spin=0,last=t0,drag=false,lx=0,dv=0;
+addEventListener('pointermove',e=>{mx=(e.clientX/innerWidth-.5);my=(e.clientY/innerHeight-.5);});
+canvas.addEventListener('pointerdown',e=>{if(e.pointerType==='mouse'){drag=true;lx=e.clientX;}});
+addEventListener('pointerup',()=>drag=false);
+addEventListener('pointermove',e=>{if(drag){dv+=(e.clientX-lx)*0.01;lx=e.clientX;}});
+let visible=true;new IntersectionObserver(es=>visible=es[0].isIntersecting).observe(canvas);
+function frame(t){
+ const dt=Math.min((t-last)/1000,.05);last=t;
+ const intro=reduce?1:ease(Math.min(1,(t-t0)/2600));
+ const p=window.__heroP||0;
+ canvas.style.filter=intro<1?`blur(${((1-intro)*14).toFixed(2)}px)`:'none';
+ smx+=(mx-smx)*.05;smy+=(my-smy)*.05;
+ if(!reduce)spin+=dt*0.12;
+ dv*=0.93;spin+=dv*dt*6;
+ // camera path: close-up on crown -> wide hero -> pull back + rise over pedestal
+ const sp=ease(Math.min(1,p/0.85));
+ const dist=lerp(2.6,mobile?18.5:9.2,intro)+sp*(mobile?2.0:1.8);
+ const tgtY=lerp(0.9,mobile?-1.9:-0.1,intro)+sp*(-0.1);
+ const camY=lerp(1.0,0.4,intro)+sp*1.2;
+ const offX=mobile?0:lerp(0,-2.0,intro)*(1-sp*0.75);
+ cam.position.set(offX+smx*0.35,camY-smy*0.25,dist);cam.lookAt(offX,tgtY,0);
+ pivot.rotation.y=-0.35+spin+sp*Math.PI*1.25-(1-intro)*0.6;
+ pivot.position.y=(reduce?0:Math.sin(t/1600)*0.04)+sp*0.08;updSparks(reduce?0:t);
+ if(visible)r.render(scene,cam);
+ requestAnimationFrame(frame);}
+requestAnimationFrame(frame);
+}catch(e){console.error(e);canvas.style.display='none';}
+</script>
+
+</body>
+</html>
